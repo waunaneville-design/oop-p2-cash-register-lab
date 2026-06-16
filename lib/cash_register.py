@@ -2,13 +2,15 @@
 
 class CashRegister:
     def __init__(self, discount=0):
-        self.discount = discount
         self.total = 0
         self.items = []
         self.previous_transactions = []
 
-        if not isinstance(self.discount, int) or self.discount < 0 or self.discount > 100:
-            print("Not valid discount")
+        try:
+            if discount < 0 or discount > 100:
+                raise ValueError
+            self.discount = discount
+        except Exception:
             self.discount = 0
 
     def add_item(self, item, price, quantity=1):
