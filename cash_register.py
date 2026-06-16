@@ -30,7 +30,7 @@ class CashRegister:
         self.total = discounted_total
         if self.total.is_integer():
             self.total = int(self.total)
-        print(f"After the discount, the total comes to ${self.total}.")
+        print(f"After the discount, the total comes to this ${self.total}.")
 
     def void_last_transaction(self):
         if not self.previous_transactions:
